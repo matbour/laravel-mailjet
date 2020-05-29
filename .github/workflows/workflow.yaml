@@ -1,0 +1,26 @@
+name: Pipeline
+on:
+  push:
+    branches:
+      - '**'
+jobs:
+  lint:
+    name: Lint with PHP_CodeSniffer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        if: "!contains(github.event.head_commit.message, 'lint:skip')"
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        if: "!contains(github.event.head_commit.message, 'lint:skip')"
+        uses: shivammathur/setup-php@2.2.2
+        with:
+          php-version: 7.2
+          coverage: none
+          tools: prestissimo
+      - name: Install dependencies
+        if: "!contains(github.event.head_commit.message, 'lint:skip')"
+        run: composer install --ignore-platform-reqs --no-progress --no-suggest --prefer-dist
+      - name: Lint with PHP_CodeSniffer
+        if: "!contains(github.event.head_commit.message, 'lint:skip')"
+        run: vendor/bin/phpcs

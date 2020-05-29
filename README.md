@@ -1,4 +1,10 @@
 # Mailjet integration for Laravel and Lumen
+![GitHub license](https://img.shields.io/github/license/mathieu-bour/laravel-mailjet?style=flat-square)
+![Packagist Version](https://img.shields.io/packagist/v/mathieu-bour/laravel-mailjet?style=flat-square)
+![Packagist](https://img.shields.io/packagist/dt/mathieu-bour/laravel-mailjet?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/mathieu-bour/laravel-mailjet?style=flat-square)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/mathieu-bour/laravel-mailjet?style=flat-square)
+![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/mathieu-bour/laravel-mailjet?style=flat-square)
 
 Allow to use the [Mailjet Templating Language](https://www.mailjet.com/feature/templating-language/) in Laravel mailables.
 
@@ -9,6 +15,12 @@ This package follows the [Semantic Versioning specification](https://semver.org/
 ## Prerequisites
 - PHP >= 7.2
 - Laravel/Lumen 6 or 7
+
+### Compatibility matrix
+
+| laravel-mailjet | Laravel / Lumen | 
+|-----------------|-----------------|
+| ^1.0.0          | ^6.0 \|\| ^7.0  |
 
 ## Installation / configuration
 
