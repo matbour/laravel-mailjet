@@ -1,0 +1,52 @@
+{
+  "name": "mathieu-bour/laravel-mailjet",
+  "description": "Mailjet Integration for Laravel and Lumen frameworks",
+  "version": "1.0.0",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "lumen",
+    "email",
+    "mailjet"
+  ],
+  "homepage": "https://github.com/mathieu-bour/laravel-mailjet",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mathieu Bour",
+      "email": "mathieu.tin.bour@gmail.com",
+      "homepage": "https://www.linkedin.com/in/mathieu-bour",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "email": "mathieu.tin.bour@gmail.com",
+    "issues": "https://github.com/mathieu-bour/laravel-mailjet/issues",
+    "source": "https://github.com/mathieu-bour/laravel-mailjet",
+    "docs": "https://github.com/mathieu-bour"
+  },
+  "require": {
+    "php": "^7.2",
+    "illuminate/mail": "^6.0 || ^7.0",
+    "mailjet/mailjet-apiv3-php": "^1.2",
+    "mailjet/mailjet-swiftmailer": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Windy\\Mailjet\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Windy\\Mailjet\\MailjetServiceProvider"
+      ]
+    }
+  }
+}
