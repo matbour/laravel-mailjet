@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Windy\Mailjet;
 
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Message;
 use Swift_Message;
 use function json_encode;
 
@@ -26,6 +27,20 @@ class MailjetTemplateMailable extends Mailable
     protected function buildView(): array
     {
         return [null, null, 'raw'];
+    }
+
+    /**
+     * Hijack the Laravel subject builder to use the one defined in the Mailjet interface.
+     *
+     * @param Message $message
+     *
+     * @return $this|MailjetTemplateMailable
+     *
+     * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
+     */
+    protected function buildSubject($message)
+    {
+        return $this;
     }
 
     /**
